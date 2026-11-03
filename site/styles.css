@@ -1,0 +1,263 @@
+/* AI Companion Roles Guide — warm, plain, print-aware. */
+/* Copyright (c) 2026 Asdale Dynamics, LLC — MIT licensed. */
+
+:root {
+  --paper: #faf6ef;
+  --ink: #33302b;
+  --faint: #6f675c;
+  --accent: #b0572f;
+  --accent-soft: #f3e2d7;
+  --card: #fffdf9;
+  --line: #e6dcd0;
+  --code-bg: #f3ece1;
+  --max: 46rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1.02rem/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  padding: 0.65rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: var(--faint);
+  text-decoration: none;
+  font: 600 0.86rem/1 "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+}
+
+nav a:hover { color: var(--accent); background: var(--accent-soft); }
+nav a.active { color: #fff; background: var(--accent); }
+
+main.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.2rem 1.2rem 3rem;
+}
+
+.brand {
+  font: 700 0.78rem/1 "Segoe UI", -apple-system, Arial, sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.6rem;
+}
+
+h1, h2, h3, h4 { line-height: 1.25; }
+
+h1 { font-size: 2.05rem; margin: 0 0 1rem; }
+
+h2 {
+  font-size: 1.4rem;
+  margin: 2.4rem 0 0.6rem;
+  padding-top: 0.35rem;
+}
+
+h3 { font-size: 1.08rem; margin: 1.9rem 0 0.45rem; color: #4a4238; }
+
+p { margin: 0.7rem 0 1.05rem; }
+
+a { color: var(--accent); }
+
+ul, ol { padding-left: 1.5rem; }
+li { margin: 0.32rem 0; }
+
+blockquote {
+  margin: 1.2rem 0;
+  padding: 0.55rem 1.1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+}
+
+blockquote p { margin: 0.35rem 0; }
+
+code, pre {
+  font: 0.86rem/1.5 "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+code {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+}
+
+pre code { background: none; border: none; padding: 0; white-space: pre; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2.2rem 0;
+}
+
+/* Home page */
+.home h1 { font-size: 2.3rem; }
+.lede { font-size: 1.12rem; }
+
+.cta { display: flex; gap: 0.8rem; margin: 1.4rem 0 0.6rem; flex-wrap: wrap; }
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font: 600 0.95rem/1 "Segoe UI", -apple-system, Arial, sans-serif;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+}
+
+.button:hover { background: #94451f; }
+
+.button.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+ul.toc { list-style: none; padding: 0; }
+
+ul.toc li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+ul.toc a {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+ul.toc a:hover { color: #94451f; }
+
+ul.toc .blurb { display: block; color: var(--faint); font-size: 0.92rem; }
+
+/* Card deck */
+body.deck .card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.2rem 1.25rem 1.1rem;
+  margin: 1rem 0 1.4rem;
+  box-shadow: 0 1px 3px rgba(90, 70, 50, 0.06);
+}
+
+body.deck .card h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: var(--accent);
+}
+
+/* Pagers */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.6rem;
+  flex-wrap: wrap;
+}
+
+.pn {
+  font: 600 0.92rem/1.3 "Segoe UI", -apple-system, Arial, sans-serif;
+  text-decoration: none;
+  color: var(--accent);
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pn:hover { border-color: var(--accent); }
+
+/* Workbooks */
+body.workbook { background: #fff; }
+
+body.workbook main.page { max-width: var(--max); }
+
+.print-hint {
+  font: 0.95rem "Segoe UI", -apple-system, Arial, sans-serif;
+  background: var(--accent-soft);
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+}
+
+nav a[onclick] { border: 1.5px solid var(--accent); color: var(--accent); }
+
+ul.checks { list-style: none; padding-left: 0.2rem; }
+
+li.check { margin: 0.5rem 0; }
+
+li.check .box {
+  display: inline-block;
+  width: 0.95rem;
+  height: 0.95rem;
+  border: 1.6px solid #7a6a58;
+  border-radius: 3px;
+  margin-right: 0.45rem;
+  vertical-align: -0.12rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+  padding: 1.4rem 1.2rem 2.2rem;
+  text-align: center;
+  color: var(--faint);
+  font-size: 0.85rem;
+}
+
+footer p { margin: 0.3rem 0; }
+
+/* Print: workbooks become clean paper. */
+@media print {
+  nav, footer, .print-hint, .pn { display: none; }
+
+  body { background: #fff; font-size: 12pt; }
+
+  main.page {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  body.deck .card {
+    border: 1px solid #999;
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3 { break-after: avoid; }
+
+  pre { overflow: visible; white-space: pre-wrap; }
+}
